@@ -1,57 +1,94 @@
 <script>
-	import Counter from '$lib/Counter.svelte';
+    export let data; 
 </script>
-
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+    <title>Новости</title>
 </svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
 
-	h1 {
-		width: 100%;
-	}
+    .post-block {
+        width: 80%;
+        margin: 2rem 0;
+        padding: 2.5rem;
+        background: rgba(23, 42, 69, 0.7);
+        backdrop-filter: blur(8px);
+        border-radius: 1rem;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(100, 255, 218, 0.1);
+        transition: all 0.3s ease;
+    }
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+    .post-block:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+        border-color: rgba(100, 255, 218, 0.3);
+    }
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+    .left {
+        margin-right: auto;
+        border-top-right-radius: 4rem;
+        border-bottom-right-radius: 4rem;
+    }
+
+    .right {
+        margin-left: auto;
+        border-top-left-radius: 4rem;
+        border-bottom-left-radius: 4rem;
+    }
+
+    h1 {
+        color: #64ffda;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        color: #64ffda;
+        margin-top: 0;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .excerpt {
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        color: #ccd6f6;
+    }
+
+    .read-more {
+        display: inline-block;
+        color: #64ffda;
+        text-decoration: none;
+        border: 2px solid #64ffda;
+        padding: 0.7rem 2rem;
+        border-radius: 2rem;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        background-color: rgba(100, 255, 218, 0.1);
+    }
+
+    .read-more:hover {
+        background-color: rgba(100, 255, 218, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(100, 255, 218, 0.2);
+    }
 </style>
+
+<div class="container">
+    <h1>МатМех Новости</h1>
+
+    {#each data.summaries as summary, i}
+        <div class="post-block {i % 2 === 0 ? 'left' : 'right'}">
+            <h2>{summary.title}</h2>
+            <p class="excerpt">{summary.excerpt}</p>
+            <a href="/{summary.slug}" class="read-more">Читать далее →</a>
+        </div>
+    {/each}
+</div>
