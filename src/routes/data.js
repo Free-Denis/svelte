@@ -1,5 +1,132 @@
 export const posts = [
     {
+    slug: 'priemnye-chasy-may2-2025',
+    title: 'Приёмные часы дирекции ДММиКН (12.05.25 - 16.05.25)',
+    content: `
+        <div class="schedule-container">
+            <div class="schedule-notice">
+                <p>📅 <strong>Расписание приёмных часов на неделю с 12.05.25 по 16.05.25:</strong></p>
+            </div>
+
+            <div class="timetable">
+                <div class="day-card">
+                    <h3>Понедельник</h3>
+                    <p>12:15 - 13:00</p>
+                </div>
+                <div class="day-card">
+                    <h3>Вторник</h3>
+                    <p>12:00 - 13:00</p>
+                </div>
+                <div class="day-card inactive">
+                    <h3>Среда</h3>
+                    <p>Неприемный день</p>
+                </div>
+                <div class="day-card">
+                    <h3>Четверг</h3>
+                    <p>12:00 - 13:00</p>
+                </div>
+                <div class="day-card">
+                    <h3>Пятница</h3>
+                    <p>12:00 - 13:00</p>
+                </div>
+            </div>
+
+            <div class="important-notes">
+                <div class="note-block">
+                    <p>🔍 <strong>Важно!</strong> Ищите нас по всему деканату - мы можем быть в разных местах</p>
+                </div>
+                
+                <div class="note-block urgent">
+                    <p>🚨 <strong>Срочные вопросы:</strong> Можно подойти вне приёмных часов или написать в ЛС</p>
+                </div>
+            </div>
+
+            <div class="regular-work">
+                <h3>Обычный режим работы деканата:</h3>
+                <ul>
+                    <li>Поиск потерянных вещей</li>
+                    <li>Оформление электронных пропусков</li>
+                    <li>Выдача уведомлений</li>
+                    <li>Вопросы по восстановлению/переводу</li>
+                </ul>
+                <p><strong>Часы работы:</strong> Пн-Чт 10:00-16:00, Пт 10:00-15:00</p>
+            </div>
+        </div>
+
+        <style>
+            .schedule-container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .schedule-notice {
+                background: rgba(100, 255, 218, 0.1);
+                padding: 1rem;
+                border-radius: 8px;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+            .timetable {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            .day-card {
+                background: rgba(23, 42, 69, 0.7);
+                padding: 1.2rem;
+                border-radius: 8px;
+                text-align: center;
+                border-top: 3px solid #64ffda;
+            }
+            .day-card.inactive {
+                opacity: 0.7;
+                border-top-color: #8892b0;
+            }
+            .important-notes {
+                margin: 2rem 0;
+            }
+            .note-block {
+                background: rgba(100, 255, 218, 0.1);
+                padding: 1rem;
+                border-left: 3px solid #64ffda;
+                margin-bottom: 1rem;
+            }
+            .note-block.urgent {
+                background: rgba(255, 107, 107, 0.1);
+                border-left-color: #ff6b6b;
+            }
+            .regular-work {
+                background: rgba(23, 42, 69, 0.5);
+                padding: 1.5rem;
+                border-radius: 8px;
+            }
+            .regular-work ul {
+                padding-left: 1.5rem;
+            }
+            .regular-work li {
+                margin-bottom: 0.5rem;
+                position: relative;
+                padding-left: 1.2rem;
+            }
+            .regular-work li:before {
+                content: "•";
+                color: #64ffda;
+                position: absolute;
+                left: 0;
+            }
+            h3 {
+                color: #64ffda;
+                margin-top: 0;
+            }
+            @media (max-width: 600px) {
+                .timetable {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    ` 
+    },
+    {
         slug: 'anketa',
         title: 'Aнкетирование о работе кураторов',
         content: `
