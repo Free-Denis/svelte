@@ -29,7 +29,25 @@
 </svelte:head>
 
 <style>
-    /* Твой стиль без изменений */
+    .post-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+    }
+    h1 {
+        color: #64ffda;
+        margin-bottom: 1.5rem;
+    }
+    .content {
+        color: #ccd6f6;
+        line-height: 1.7;
+    }
+    .back-link {
+        display: inline-block;
+        margin-top: 2rem;
+        color: #64ffda;
+    }
+
 </style>
 
 {#if post}
