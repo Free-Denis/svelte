@@ -4,7 +4,7 @@
 
     onMount(async () => {
         try {
-            const res = await fetch('https://oavha4ppbd3sfhp7.public.blob.vercel-storage.com/posts.json', {cache: 'no-store'});
+            const res = await fetch('/api/posts');
             if (!res.ok) throw new Error('Failed to load posts');
 
             const posts = await res.json();
