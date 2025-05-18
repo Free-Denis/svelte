@@ -1,6 +1,8 @@
-import { posts } from './data.js';
+import { fetchPosts } from '$lib/fetchPosts.js';
 
-export function load() {
+export async function load() {
+    const posts = await fetchPosts();
+
     return {
         summaries: posts.map((post) => ({
             slug: post.slug,
