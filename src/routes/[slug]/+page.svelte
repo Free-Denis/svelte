@@ -8,7 +8,7 @@
     onMount(async () => {
         const slug = get(page).params.slug;
         try {
-            const res = await fetch('https://oavha4ppbd3sfhp7.public.blob.vercel-storage.com/posts.json');
+            const res = await fetch('https://oavha4ppbd3sfhp7.public.blob.vercel-storage.com/posts.json', {cache: 'no-store'});
             if (!res.ok) throw new Error('Failed to load posts');
 
             const posts = await res.json();
