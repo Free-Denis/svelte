@@ -1,13 +1,12 @@
-import { fetchPosts } from '$lib/fetchPosts.js';
-
 export async function load({ params }) {
-    const posts = await fetchPosts();
+    const res = await fetch("https://oavha4ppbd3sfhp7.public.blob.vercel-storage.com/posts.json");
+    const posts = await res.json();
+
     const post = posts.find(p => p.slug === params.slug);
 
     if (!post) {
         return {
-            status: 404,
-            error: new Error('Пост не найден')
+            status: 404
         };
     }
 
